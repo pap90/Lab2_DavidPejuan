@@ -119,5 +119,7 @@ public class Alumno {
     public void setNota(ArrayList<notas> nota) {
         this.nota = nota;
     }
+    
+    
 
 }
