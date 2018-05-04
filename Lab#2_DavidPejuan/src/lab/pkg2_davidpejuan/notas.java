@@ -10,5 +10,24 @@ package lab.pkg2_davidpejuan;
  * @author pejua
  */
 public class notas {
+    private String clase;
+    private int nota;
+
+    public String getClase() {
+        return clase;
+    }
+
+    public void setClase(String clase) {
+        this.clase = clase;
+    }
+
+    public int getNota() {
+        return nota;
+    }
+
+    public void setNota(int nota) {
+        this.nota = nota;
+    }
+    
     
 }
