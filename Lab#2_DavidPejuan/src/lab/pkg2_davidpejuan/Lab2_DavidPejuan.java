@@ -165,7 +165,44 @@ public class Lab2_DavidPejuan {
                     int f=sc.nextInt();
                     switch (f) {
                         case 1:
-                            
+                            System.out.println("Ingrese nuevo nombre: ");
+                            String nnom=sc.next();
+                            u.setName(nnom);
+                            break;
+                        case 2:
+                            System.out.println("Ingrese nueva fecha de nacimiento DD/MM/YYYY");
+                            String nfdn=sc.next();
+                            u.setNacio(nfdn);
+                            break;
+                        case 3:
+                            System.out.println("Ingrese nueva edad: ");
+                            int nedad=sc.nextInt();
+                            u.setEdad(nedad);
+                            break;
+                        case 4:
+                            System.out.println("Ingrese nueva ciudad de residencia: ");
+                            String ncdr=sc.next();
+                            u.setCDR(ncdr);
+                            break;
+                        case 5:
+                            System.out.println("Ingrese nacionalidad: ");
+                            String nnc=sc.next();
+                            u.setNacio(nnc);
+                            break;
+                        case 6:
+                            System.out.println("Ingrese nuveo numero de identidad: ");
+                            String nndi=sc.next();
+                            u.setID(nndi);
+                            break;
+                        case 7:
+                            System.out.println("Ingrese nuevo nombre de usuario: ");
+                            String nndu=sc.next();
+                            u.setUser(nndu);
+                            break;
+                        case 8:
+                            System.out.println("Ingrese nueva contraseña: ");
+                            String nc=sc.next();
+                            u.setPass(nc);
                             break;
                         default:
                             throw new AssertionError();
