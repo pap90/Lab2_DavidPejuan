@@ -13,6 +13,7 @@ import java.util.Date;
  * @author pejua
  */
 public class Alumno {
+
     private String name;
     private String ncuenta;
     private String fdn;
@@ -22,7 +23,22 @@ public class Alumno {
     private String ID;
     private String user;
     private String pass;
-    private ArrayList <notas> nota=new ArrayList();
+    private ArrayList<notas> nota = new ArrayList();
+
+    public Alumno() {
+    }
+
+    public Alumno(String name, String ncuenta, String fdn, int edad, String CDR, String nacio, String ID, String user, String pass) {
+        this.name = name;
+        this.ncuenta = ncuenta;
+        this.fdn = fdn;
+        this.edad = edad;
+        this.CDR = CDR;
+        this.nacio = nacio;
+        this.ID = ID;
+        this.user = user;
+        this.pass = pass;
+    }
 
     public String getName() {
         return name;
@@ -47,8 +63,6 @@ public class Alumno {
     public void setFdn(String fdn) {
         this.fdn = fdn;
     }
-
-    
 
     public int getEdad() {
         return edad;
@@ -105,7 +119,5 @@ public class Alumno {
     public void setNota(ArrayList<notas> nota) {
         this.nota = nota;
     }
-    
-    
-    
+
 }

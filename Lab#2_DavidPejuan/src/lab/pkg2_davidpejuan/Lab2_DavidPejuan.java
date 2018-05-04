@@ -18,6 +18,7 @@ public class Lab2_DavidPejuan {
     public static int cont=1;
     public static Date d;
     public static ArrayList <Alumno> A=new ArrayList();
+    public static ArrayList <Examen> E=new ArrayList();
     /**
      * @param args the command line arguments
      */
@@ -67,5 +68,24 @@ public class Lab2_DavidPejuan {
         String p=sc.next();
         aux.setPass(p);
         A.add(aux);
+    }
+    public static void crearex(){
+        Examen aux;
+        aux=new Examen();
+        System.out.println("Ingrese la clase del examen: ");
+        String c=sc.next();
+        aux.setNclase(c);
+        char respe='s';
+        while (respe=='s'||respe=='S') {
+            System.out.println("Ingrese pregunta");
+            String preg=sc.next();
+            aux.getPreg().add(preg);
+            System.out.println("Ingrese respuesta de la pregunta anterior: ");
+            String resp=sc.next();
+            aux.getResp().add(resp);
+            System.out.println("Desea agregar otra pregunta?[s/n]: ");
+            respe=sc.next().charAt(0);
+        }
+        E.add(aux);
     }
 }
