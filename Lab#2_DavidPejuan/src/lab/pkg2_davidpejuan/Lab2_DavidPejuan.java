@@ -52,7 +52,7 @@ public class Lab2_DavidPejuan {
                     crearex();
                     break;
                 case 2:
-
+                    revisar();
                     break;
                 case 3:
                     try {
@@ -134,6 +134,7 @@ public class Lab2_DavidPejuan {
         for (Alumno u : A) {
             if (user.equals(u.getUser()) && user.equals(u.getPass())) {
                 actual = u;
+                break;
             }
         }
         if (actual != null) {
@@ -231,5 +232,17 @@ public class Lab2_DavidPejuan {
             }
         }
     }
-
+    public static void revisar(){
+        System.out.println("Ingrese el alumno que desea revisar: ");
+        int cont=1;
+        for (int i = 0; i < E.size(); i++) {
+            System.out.println(cont+")"+E.get(i));
+        }
+        int sel=sc.nextInt();
+        System.out.println("Sus respuestas fueron: ");
+        System.out.println(A.get(sel).getResps());
+        System.out.println("Ingrese nota: ");
+        int not=sc.nextInt();
+        A.get(sel).setNota(A.get(sel).getNota()+not);
+    }
 }

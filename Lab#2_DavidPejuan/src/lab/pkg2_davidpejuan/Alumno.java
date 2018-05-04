@@ -23,14 +23,14 @@ public class Alumno {
     private String ID;
     private String user;
     private String pass;
-    private ArrayList<notas> nota = new ArrayList();
+    private int nota;
     private ArrayList<Examen> ex=new ArrayList();
     private ArrayList<String> resps=new ArrayList();
 
     public Alumno() {
     }
 
-    public Alumno(String name, String ncuenta, String fdn, int edad, String CDR, String nacio, String ID, String user, String pass) {
+    public Alumno(String name, String ncuenta, String fdn, int edad, String CDR, String nacio, String ID, String user, String pass, int nota) {
         this.name = name;
         this.ncuenta = ncuenta;
         this.fdn = fdn;
@@ -40,7 +40,10 @@ public class Alumno {
         this.ID = ID;
         this.user = user;
         this.pass = pass;
+        this.nota = nota;
     }
+
+    
 
     public String getName() {
         return name;
@@ -114,13 +117,15 @@ public class Alumno {
         this.pass = pass;
     }
 
-    public ArrayList<notas> getNota() {
+    public int getNota() {
         return nota;
     }
 
-    public void setNota(ArrayList<notas> nota) {
+    public void setNota(int nota) {
         this.nota = nota;
     }
+
+
 
     public ArrayList<Examen> getEx() {
         return ex;
