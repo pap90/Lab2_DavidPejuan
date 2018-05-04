@@ -24,6 +24,8 @@ public class Alumno {
     private String user;
     private String pass;
     private ArrayList<notas> nota = new ArrayList();
+    private ArrayList<Examen> ex=new ArrayList();
+    private ArrayList<String> resps=new ArrayList();
 
     public Alumno() {
     }
@@ -119,6 +121,24 @@ public class Alumno {
     public void setNota(ArrayList<notas> nota) {
         this.nota = nota;
     }
+
+    public ArrayList<Examen> getEx() {
+        return ex;
+    }
+
+    public void setEx(ArrayList<Examen> ex) {
+        this.ex = ex;
+    }
+
+    public ArrayList<String> getResps() {
+        return resps;
+    }
+
+    public void setResps(ArrayList<String> resps) {
+        this.resps = resps;
+    }
+    
+    
     
     
 

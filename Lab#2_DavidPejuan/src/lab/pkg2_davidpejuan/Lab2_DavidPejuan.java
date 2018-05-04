@@ -6,7 +6,6 @@
 package lab.pkg2_davidpejuan;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -17,10 +16,9 @@ public class Lab2_DavidPejuan {
 
     public static Scanner sc = new Scanner(System.in);
     public static int cont = 1;
-    public static Date d;
     public static ArrayList<Alumno> A = new ArrayList();
     public static ArrayList<Examen> E = new ArrayList();
-    public static Alumno actual = null;
+    
 
     /**
      * @param args the command line arguments
@@ -32,7 +30,7 @@ public class Lab2_DavidPejuan {
             opc = sc.nextInt();
             switch (opc) {
                 case 1:
-
+                    Admin();
                     break;
                 case 2:
                     crearusuario();
@@ -91,7 +89,7 @@ public class Lab2_DavidPejuan {
         String r = sc.next();
         aux.setCDR(r);
         System.out.println("Ingrese Nacionalidad: ");
-        String nac = sc.next();
+        String nac= sc.next();
         aux.setNacio(nac);
         System.out.println("Ingrese su numero de identidad: ");
         String ID = sc.next();
@@ -122,6 +120,9 @@ public class Lab2_DavidPejuan {
             respe = sc.next().charAt(0);
         }
         E.add(aux);
+        for (int i = 0; i < A.size(); i++) {
+            A.get(i).setEx(E);
+        }
     }
 
     public static void login() {
@@ -129,11 +130,10 @@ public class Lab2_DavidPejuan {
         String user = sc.next();
         System.out.println("Ingrese contraseña: ");
         String contra = sc.next();
-        actual = null;
+        Alumno actual = null;
         for (Alumno u : A) {
             if (user.equals(u.getUser()) && user.equals(u.getPass())) {
                 actual = u;
-                break;
             }
         }
         if (actual != null) {
@@ -208,8 +208,26 @@ public class Lab2_DavidPejuan {
                             throw new AssertionError();
                     }
                     break;
+                case 3:
+                    System.out.println("Sus notas son: ");
+                    System.out.println(u.getNota());
+                    break;
+                case 4:
+                    ArrayList<String> s=new ArrayList();
+                    int cont=0;
+                    System.out.println("Seleccione un examen a realizar: ");
+                    for (int i = 0; i < E.size(); i++) {
+                        System.out.println(cont+")"+E.get(i));
+                    }
+                    int sel=sc.nextInt();
+                    System.out.println(E.get(sel).getPreg());
+                    System.out.println("Ingrese sus respuestas en orden y en una sola linea con espacios. ");
+                    String resps=sc.next();
+                    s.add(resps);
+                    u.setResps(s);
+                    
+                    break;
                 default:
-                    throw new AssertionError();
             }
         }
     }
